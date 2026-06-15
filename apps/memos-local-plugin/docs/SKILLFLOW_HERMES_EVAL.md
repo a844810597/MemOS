@@ -144,7 +144,7 @@ hermes chat --resume "$HERMES_SESSION_ID" --quiet --yolo \
   --accept-hooks --pass-session-id -q "$PROMPT"
 ```
 
-Every new benchmark task prompt starts with exactly:
+Every new evaluation task prompt starts with exactly:
 
 ```text
 换个任务：
@@ -154,7 +154,7 @@ This explicit boundary helps the plugin close/finalize the previous task and
 start a new episode.
 
 Do not use `换个话题`, task-switching synonyms, or task-boundary phrases in this
-evaluation. Use the exact boundary phrase above only for new benchmark tasks.
+evaluation. Use the exact boundary phrase above only for new evaluation tasks.
 Verifier-feedback prompts and same-task correction prompts must not contain it.
 
 ## Manual Workflow
@@ -197,7 +197,7 @@ verifier, the operator must tell Hermes:
 The feedback prompt itself must be English and must not contain task-switching
 phrases. In this evaluation, that means no `换个任务`, no `换个话题`, and no
 Chinese sentence that asks Hermes to switch/start another task. The exact phrase
-`换个任务：` should appear only at the start of a new benchmark task prompt.
+`换个任务：` should appear only at the start of a new evaluation task prompt.
 Including a task-switching phrase in the verifier feedback turn can make the
 memory plugin split the feedback into a separate task instead of attaching it to
 the task that just ran.
